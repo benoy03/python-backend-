@@ -1,0 +1,16 @@
+Word Frequency Counts:
+
+'a': 1
+'contains': 1
+'count': 1
+'file': 3
+'in': 1
+'is': 1
+'sample': 2
+'some': 1
+'text': 2
+'the': 1
+'this': 3
+'we': 1
+'will': 1
+'words': 1

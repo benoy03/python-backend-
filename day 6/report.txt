@@ -1,0 +1,5 @@
+Server Log Analysis Report
+
+Successful (200): 3
+Not Found (404): 2
+Server Error (500): 1
