@@ -1,6 +1,4 @@
-# Exercise 3: User Registration with Custom Exceptions
 
-# --- Custom Exception Definitions ---
 class InvalidLengthError(Exception):
     """Raised when the username length is not within the valid range."""
     pass
@@ -18,15 +16,15 @@ def register_user():
     registration_successful = False
 
     try:
-        # Step 1: Validate username length
+       
         if not 5 <= len(username) <= 15:
             raise InvalidLengthError("Username must be between 5 and 15 characters long.")
 
-        # Step 2: Validate username characters
+       
         if not username.isalnum():
             raise InvalidCharacterError("Username must contain only alphanumeric characters.")
 
-        # Step 3: Write valid username to file
+       
         with open("users.txt", "a") as user_file:
             user_file.write(f"{username}\n")
         
@@ -40,10 +38,10 @@ def register_user():
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
     finally:
-        # The finally block always executes, regardless of whether an exception occurred
+    
         status = "successful" if registration_successful else "failed"
         print(f"Registration attempt for '{username}' has {status}.")
 
-# Run the program
+
 register_user()
 

@@ -20,4 +20,4 @@ def process_file(input_filename, output_filename):
         print(f"An unexpected error occurred: {e}")
 
 
-process_file('input.txt', 'output.txt')
+process_file('input.txt', 'output.txt') 

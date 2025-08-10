@@ -1,6 +1,4 @@
-# Exercise 1: Palindrome Checker with File I/O
 
-# --- Setup: Create a dummy input file for demonstration ---
 try:
     with open("input_words.txt", "w") as f:
         f.write("Radar\n")
@@ -12,7 +10,7 @@ try:
     print("Created 'input_words.txt' with sample data.")
 except IOError as e:
     print(f"Error creating dummy file: {e}")
-    # Exit if file creation fails, as the rest of the program depends on it.
+
     exit()
 
 def find_palindromes(input_file, output_file):
@@ -24,18 +22,18 @@ def find_palindromes(input_file, output_file):
         output_file (str): The name of the file to write palindromes to.
     """
     try:
-        # Step 1: Read words from the input file
+        
         with open(input_file, 'r') as infile:
             words = [line.strip() for line in infile.readlines()]
 
         palindromes = []
-        # Step 2: Identify palindromes (case-insensitive)
+       
         for word in words:
-            # Check if the word is not empty and is a palindrome
+      
             if word and word.lower() == word[::-1].lower():
                 palindromes.append(word.upper())
         
-        # Step 3: Write palindromes to the output file
+      
         with open(output_file, 'w') as outfile:
             for palindrome in palindromes:
                 outfile.write(f"{palindrome}\n")
