@@ -1,0 +1,32 @@
+import base64
+from io import BytesIO
+from PIL import Image, ImageFilter
+
+
+img_base64 = """
+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
+"""
+
+
+img_bytes = base64.b64decode(img_base64)
+
+
+image = Image.open(BytesIO(img_bytes))
+
+
+blur = image.filter(ImageFilter.BLUR)
+contour = image.filter(ImageFilter.CONTOUR)
+emboss = image.filter(ImageFilter.EMBOSS)
+
+
+width, height = image.size
+collage = Image.new("RGB", (width*2, height*2))
+
+collage.paste(image, (0, 0))
+collage.paste(blur, (width, 0))
+collage.paste(contour, (0, height))
+collage.paste(emboss, (width, height))
+
+
+collage.save("collage_from_base64.jpg")
+print("✅ Collage saved as collage_from_base64.jpg")
