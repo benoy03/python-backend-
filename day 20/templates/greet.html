@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff9966, #ff5e62);
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        .greet-card {
+            background: rgba(0,0,0,0.3);
+            padding: 25px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #00e5ff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="greet-card">
+        <h1>Hello, {{ name }} 👋</h1>
+        <a href="/">Back Home</a>
+    </div>
+</body>
+</html>
