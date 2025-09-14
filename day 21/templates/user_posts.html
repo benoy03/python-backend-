@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Posts</title>
+    <style>
+        body { font-family: Arial; padding: 40px; }
+        h1 { color: #e94e77; }
+        .post { margin: 15px 0; padding: 15px; background: #fff0f5; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Posts by User {{ user_id }}{% if status %} (Status: {{ status }}){% endif %}</h1>
+    {% for post in posts %}
+        <div class="post">
+            <h2>{{ post.title }}</h2>
+            <p>Status: {{ post.status }}</p>
+            <small>Post ID: {{ post.id }}</small>
+        </div>
+    {% endfor %}
+    <a href="/">Back Home</a>
+</body>
+</html>
